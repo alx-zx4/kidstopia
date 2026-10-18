@@ -193,11 +193,10 @@ nav{
   padding:0 clamp(24px,5vw,60px);height:68px;
   transition:background .4s,box-shadow .4s;
 }
-/* Sólido, sin blur: la barra al hacer scroll es una franja de color plano
-   con una línea gruesa de acento abajo, no un panel de vidrio esmerilado. */
+/* Sólido, sin blur: la barra al hacer scroll es una franja de color plano,
+   sin línea/borde de acento abajo. */
 nav.scrolled{
   background:var(--dark);
-  box-shadow:0 3px 0 var(--accent);
 }
 nav.scrolled .nav-logo{color:var(--white)}
 nav.scrolled .nav-links a{color:rgba(255,253,247,.8)}
@@ -352,7 +351,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
     0 5px 0 rgba(43,24,84,.55);
 }
 .hero-subtitle{
-  /* FIX (bug real, ya documentado): antes color:var(--accent) — un color de
+  /* FIX (bug real, ya documentado): antes color:var(--white) — un color de
      marca que cambia por cliente y que, con la foto real del salón, puede
      coincidir de casualidad con un tono presente en la foto (ropa, un
      letrero, un inflable) justo detrás del texto. Ahí ni el halo salva:
@@ -438,6 +437,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
   height:clamp(56px,8vw,84px);
 }
 .belt-svg{display:block;width:100%;height:100%}
+#hero .wave-divider{z-index:7}
 
 /* ══ NOSOTROS ══ */
 #nosotros{
@@ -774,17 +774,21 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
    mensaje, no un hero. Más peso que el cuerpo pero sin tamaño de título. */
 .jesus-note-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .jesus-note-foto{
-  width:64px;height:64px;border-radius:50%;object-fit:cover;
+  width:88px;height:88px;border-radius:50%;object-fit:cover;
   /* La foto fuente (founder-jesus.webp) es retrato de cuerpo, no un
      headshot cuadrado — con object-position:center (default) el recorte
      circular caía a la altura del pecho, no de la cara. 18% la sube para
      encuadrar la cara. Si algún día cambia la foto fuente, revisa este
      valor contra la nueva. */
-  object-position:center 18%;
+  object-position:center 14%;
   flex-shrink:0;display:block;
   border:2px solid rgba(13,59,71,.18);
 }
 .jesus-note-nombre{font-weight:700;font-size:1.15em;color:var(--dark)}
+.jesus-note-tel{
+  display:block;margin-top:12px;font-family:'Quicksand','Caveat',sans-serif;
+  font-size:14.5px;font-weight:700;color:var(--dark);letter-spacing:.2px;
+}
 /* Imagen de firma real (firma-jesus.webp): el archivo son trazos casi
    BLANCOS sobre fondo transparente — pensados para fondos oscuros. Sobre
    el papel claro de esta nota serían invisibles. filter:brightness(0)
@@ -1037,7 +1041,6 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
 .card-item[data-s="out-l"]{transform:translateX(-135%) rotate(-20deg) scale(.82);opacity:0;z-index:6;pointer-events:none}
 .card-item[data-s="out-r"]{transform:translateX(135%) rotate(20deg) scale(.82);opacity:0;z-index:6;pointer-events:none}
 .no-tr{transition:none!important}
-.card-label{font-family:var(--font-serif);font-style:normal;font-weight:700;font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.03em}
 .card-pips{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;pointer-events:none}
 /* Pips de confetti: cada punto en un color distinto de la paleta */
 .cp{display:block;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .3s,width .3s,border-radius .3s}
@@ -2184,21 +2187,11 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
       <!-- Card Carousel (imagen que se scrollea/toca) -->
       <div>
         <div class="card-carousel-wrap" id="cardCarousel">
-          <div class="card-item" style="background-image:url('fotos/galeria-1.webp')">
-            <span class="card-label">Recepción con letrero iluminado</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-2.webp')">
-            <span class="card-label">Entrada y muro de colores</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-3.webp')">
-            <span class="card-label">Árbol gigante y zona de fútbol</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-4.webp')">
-            <span class="card-label">Canasta de básquetbol</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-5.webp')">
-            <span class="card-label">Camerino de disfraces</span>
-          </div>
+          <div class="card-item" style="background-image:url('fotos/galeria-1.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-2.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-3.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-4.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-5.webp')"></div>
           <div id="cardPips" class="card-pips"></div>
         </div>
         <p class="carousel-hint">Toca o haz clic para ver más →</p>
@@ -2372,7 +2365,7 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
          El rating-badge SIEMPRE lleva la calificación y el número de reseñas
          REALES de Google (no inventados). -->
     <div class="reviews-notice" id="reviewsNotice" hidden>
-      Todavía estamos juntando las reseñas con texto para mostrarlas aquí.<br>
+      Aquí podríamos poner algunas de sus reseñas.<br>
       Mientras tanto, esta es nuestra <strong>calificación real en Google</strong>.
     </div>
     <div class="postcards-wrap reveal reveal-delay-1">
@@ -2679,25 +2672,25 @@ Estamos en Privada La Castaña, sobre el Blvd. Julián Treviño Elizondo en Apod
         <p class="form-hint" id="invHint">Escribe el nombre y elige un color, la invitación se arma sola.</p>
       </div>
     </div>
+  </div>
 
-    <!-- NOTA FIRMADA — una sola vez en toda la página, reemplaza a los dos
-         .needs-data-banner de Precios/FAQ. Va DENTRO de #contacto (la
-         sección de "Hagamos una fiesta inolvidable"), abajo de todo lo
-         demás, nunca fuera de la sección ni encima del footer — así no
-         corta ni desacomoda el footer. [EDITAR] el texto es fijo, no se
-         adapta por cliente; la foto y la firma son siempre las mismas
-         (ver ANEXO G del .md). -->
-    <div class="jesus-note-wrap">
-      <div class="jesus-note">
+  <!-- NOTA FIRMADA — una sola vez en toda la página, reemplaza a los dos
+       .needs-data-banner de Precios/FAQ. Va DENTRO de #contacto pero FUERA
+       de .contacto-inner (hermana del grid de 2 columnas, nunca su 3er hijo
+       de grid). Abajo de todo lo demás, nunca fuera de la sección ni
+       encima del footer. [EDITAR] el texto es fijo, no se adapta por
+       cliente; la foto y la firma son siempre las mismas (ver ANEXO G). -->
+  <div class="jesus-note-wrap">
+    <div class="jesus-note">
         <div class="jesus-note-head">
           <img class="jesus-note-foto" src="https://korvel.com.mx/img/founder-jesus.webp" alt="Jesús, de Korvel" width="64" height="64" loading="lazy">
           <span class="jesus-note-nombre">Jesús, de Korvel</span>
         </div>
         <p>Hola, soy Jesus, de Korvel. Esta demo la arme con las fotos que tienen en google maps, asi que seguro me faltaron cosas, como sus paquetes o algunas respuestas de aqui abajo. Lo que tengan a la mano me lo mandan y se lo acomodo para dejarla a su medida.</p>
+        <span class="jesus-note-tel">Tel: 81 2933 5144</span>
         <img class="jesus-note-firma" src="https://korvel.com.mx/img/firma-jesus.webp" alt="Firma de Jesús" width="150" height="56" loading="lazy">
       </div>
     </div>
-  </div>
   <svg class="wave-divider wave-to-dark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
 </section>
 
