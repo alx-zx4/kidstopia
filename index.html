@@ -2085,6 +2085,290 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
       <p class="faq-empty-note">Aquí vamos a poner las preguntas que más nos hagan sobre este salón. Mientras las juntamos, cualquier duda nos escriben directo y se las resolvemos al momento.</p>
     </div>
   </div>
+  <svg class="wave-divider wave-to-dark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="galeria-inner">
+    <div class="galeria-head reveal">
+      <!-- [EDITAR] Título — "Momentos" se circulará al entrar en vista -->
+      <h2 class="section-title light vcr" data-vcr="Momentos que hacen sonreír"></h2>
+    </div>
+
+    <div class="galeria-layout">
+      <!-- Card Carousel (imagen que se scrollea/toca) -->
+      <div>
+        <div class="card-carousel-wrap" id="cardCarousel">
+          <div class="card-item" style="background-image:url('fotos/galeria-1.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-2.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-3.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-4.webp')"></div>
+          <div class="card-item" style="background-image:url('fotos/galeria-5.webp')"></div>
+          <div id="cardPips" class="card-pips"></div>
+        </div>
+        <p class="carousel-hint">Toca o haz clic para ver más →</p>
+      </div>
+
+      <!-- Conveyor belt vertical — UNA sola columna de cuadrados. [EDITAR]
+           agrega/quita fotos en AMBAS copias (misma cantidad y orden) para
+           no romper el loop. -->
+      <div class="galeria-belt">
+        <div class="belt-track">
+          <div class="belt-item"><img src="fotos/galeria-1.webp" alt="Recepción con letrero iluminado" loading="lazy"><span class="belt-item-label">Recepción con letrero iluminado</span></div>
+          <div class="belt-item"><img src="fotos/galeria-2.webp" alt="Entrada y muro de colores" loading="lazy"><span class="belt-item-label">Entrada y muro de colores</span></div>
+          <div class="belt-item"><img src="fotos/galeria-3.webp" alt="Árbol gigante y zona de fútbol" loading="lazy"><span class="belt-item-label">Árbol gigante y zona de fútbol</span></div>
+          <div class="belt-item"><img src="fotos/galeria-4.webp" alt="Canasta de básquetbol" loading="lazy"><span class="belt-item-label">Canasta de básquetbol</span></div>
+          <div class="belt-item"><img src="fotos/galeria-5.webp" alt="Camerino de disfraces" loading="lazy"><span class="belt-item-label">Camerino de disfraces</span></div>
+          <!-- repetición para loop continuo -->
+          <div class="belt-item"><img src="fotos/galeria-1.webp" alt="Recepción con letrero iluminado" loading="lazy"><span class="belt-item-label">Recepción con letrero iluminado</span></div>
+          <div class="belt-item"><img src="fotos/galeria-2.webp" alt="Entrada y muro de colores" loading="lazy"><span class="belt-item-label">Entrada y muro de colores</span></div>
+          <div class="belt-item"><img src="fotos/galeria-3.webp" alt="Árbol gigante y zona de fútbol" loading="lazy"><span class="belt-item-label">Árbol gigante y zona de fútbol</span></div>
+          <div class="belt-item"><img src="fotos/galeria-4.webp" alt="Canasta de básquetbol" loading="lazy"><span class="belt-item-label">Canasta de básquetbol</span></div>
+          <div class="belt-item"><img src="fotos/galeria-5.webp" alt="Camerino de disfraces" loading="lazy"><span class="belt-item-label">Camerino de disfraces</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="wave-divider wave-to-creamdark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <!-- Un solo tono (naranja), no 4 colores compitiendo en el mismo racimo
+       — se pidió bajarle al ruido visual. -->
+  <div class="hero-dots servicios-dots-tr" aria-hidden="true">
+    <svg width="90" height="70" viewBox="0 0 90 70" fill="none">
+      <circle cx="12" cy="12" r="9"  fill="rgba(255,122,26,0.30)"/>
+      <circle cx="40" cy="8"  r="6"  fill="rgba(255,122,26,0.22)"/>
+      <circle cx="60" cy="20" r="10" fill="rgba(255,122,26,0.18)"/>
+    </svg>
+  </div>
+  <div class="servicios-inner">
+    <div class="servicios-head reveal">
+      <!-- [EDITAR] Título — la palabra "fiesta" se circulará al entrar en vista -->
+      <h2 class="section-title dark-txt vcr" data-vcr="Todo para una fiesta increíble"></h2>
+      <p class="servicios-sub">Disfraces, shows, dulces y decoración: armamos la fiesta completa para que tú solo llegues a celebrar.</p>
+    </div>
+    <!-- [EDITAR] Patrón fijo del bento, NO reordenar los tipos (solo el
+         contenido de cada tarjeta): foto,foto,oscura,oscura,foto,foto,
+         oscura,oscura (F,F,D,D,F,F,D,D). Con grid-auto-flow:row (sin
+         "dense", ver .servicios-grid) este patrón específico es el único
+         que tilea las 4 columnas sin huecos Y mantiene el orden visual
+         igual al número de cada tarjeta (01→08 de izquierda a derecha,
+         arriba a abajo) — ver ANEXO A del .md antes de tocar esto. -->
+    <div class="servicios-grid">
+      <!-- 01 — foto, destacada -->
+      <div class="servicio-card servicio-photo servicio-featured reveal">
+        <div class="servicio-bg" style="background-image:url('fotos/servicio-camerino.webp')"></div>
+        <span class="servicio-num">01</span>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Camerino de Disfraces</div>
+          <p class="servicio-desc">Tocador con luces de camerino y un ropero de princesas, bomberos y superhéroes para que se transformen antes del show.</p>
+        </div>
+      </div>
+      <!-- 02 — foto, destacada -->
+      <div class="servicio-card servicio-photo servicio-featured reveal reveal-delay-1">
+        <div class="servicio-bg" style="background-image:url('fotos/servicio-cocinita.webp')"></div>
+        <span class="servicio-num">02</span>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Cocinita de Juguete</div>
+          <p class="servicio-desc">Un rincón de juego libre con cocina de madera a su tamaño, ideal para los más pequeños de la fiesta.</p>
+        </div>
+      </div>
+      <!-- 03 — oscura -->
+      <div class="servicio-card servicio-dark reveal reveal-delay-2">
+        <span class="servicio-num">03</span>
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Shows con Botargas</div>
+          <p class="servicio-desc">Botargas que nuestros propios clientes describen como "muy limpias, iguales a las originales", con un show dinámico.</p>
+        </div>
+      </div>
+      <!-- 04 — oscura -->
+      <div class="servicio-card servicio-dark reveal reveal-delay-3">
+        <span class="servicio-num">04</span>
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 10h18"/><path d="M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M6 10v10"/><path d="M18 10v10"/></svg>
+        </div>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Laberinto y Alberca de Pelotas</div>
+          <p class="servicio-desc">Un circuito de niveles con resbaladero y alberca de pelotas, pensado para que los niños no paren de moverse.</p>
+        </div>
+      </div>
+      <!-- 05 — foto, destacada -->
+      <div class="servicio-card servicio-photo servicio-featured reveal">
+        <div class="servicio-bg" style="background-image:url('fotos/servicio-globos.webp')"></div>
+        <span class="servicio-num">05</span>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Decoración con Globos</div>
+          <p class="servicio-desc">Arcos de globos y letrero luminoso con el nombre del festejado, montados antes de que lleguen los invitados.</p>
+        </div>
+      </div>
+      <!-- 06 — foto, destacada -->
+      <div class="servicio-card servicio-photo servicio-featured reveal reveal-delay-1">
+        <div class="servicio-bg" style="background-image:url('fotos/servicio-tematica.webp')"></div>
+        <span class="servicio-num">06</span>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Fiesta Temática a tu Gusto</div>
+          <p class="servicio-desc">Pastel y ambientación armados sobre el personaje o tema que tu peque eligió, bajo el letrero Kidstopía.</p>
+        </div>
+      </div>
+      <!-- 07 — oscura -->
+      <div class="servicio-card servicio-dark reveal reveal-delay-2">
+        <span class="servicio-num">07</span>
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 21h16"/><path d="M4 21v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M12 13V9"/><path d="M12 6.5a1.5 1.5 0 1 0-1.5-1.5c0 .9 1.5 1.5 1.5 1.5z"/></svg>
+        </div>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Área de Snacks</div>
+          <p class="servicio-desc">Un punto fijo para botanas y bebidas, a un lado del laberinto para que los niños recarguen energía.</p>
+        </div>
+      </div>
+      <!-- 08 — oscura -->
+      <div class="servicio-card servicio-dark reveal reveal-delay-3">
+        <span class="servicio-num">08</span>
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="9" width="20" height="9" rx="2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M2 13h20"/></svg>
+        </div>
+        <div class="servicio-card-content">
+          <div class="servicio-name">Carritos Chocones</div>
+          <p class="servicio-desc">Carritos a control propio para que los niños choquen entre risas en su propia pista.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="waveGradTestimonios" x1="35%" y1="0%" x2="65%" y2="100%"><stop offset="0%" stop-color="#5B21A8"/><stop offset="60%" stop-color="#7340C0"/><stop offset="100%" stop-color="#5B21A8"/></linearGradient></defs><path fill="url(#waveGradTestimonios)" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <!-- Un solo tono (rosa), no 4 colores compitiendo en el mismo racimo —
+       se pidió bajarle al ruido visual. -->
+  <div class="hero-dots testimonios-dots-bl" aria-hidden="true">
+    <svg width="80" height="65" viewBox="0 0 80 65" fill="none">
+      <circle cx="10" cy="50" r="8"  fill="rgba(224,52,143,0.28)"/>
+      <circle cx="35" cy="55" r="6"  fill="rgba(224,52,143,0.20)"/>
+      <circle cx="55" cy="42" r="10" fill="rgba(224,52,143,0.16)"/>
+    </svg>
+  </div>
+  <div class="testimonios-inner">
+    <div class="testimonios-head reveal">
+      <div>
+        <!-- [EDITAR] Título — "reseñas" se circulará al entrar en vista -->
+        <h2 class="section-title light vcr" data-vcr="Las reseñas de nuestros papás"></h2>
+      </div>
+      <div class="rating-badge">
+        <span class="rating-num">4.8</span>
+        <span class="rating-stars">★★★★★</span>
+        <span class="rating-count">24 reseñas en Google</span>
+      </div>
+    </div>
+
+    <!-- ══ RESEÑAS — DOS ESTADOS. La sección va SIEMPRE, nunca se oculta. ══
+       ESTADO A (hay reseñas con texto): deja el aviso de abajo con hidden,
+         y llena las postales reales (data-quote = texto completo; .postcard-quote
+         = versión corta). Tantas como tengas. Nunca inventes reseñas ni nombres.
+       ESTADO B (NO hay reseñas con texto): quita el atributo hidden del aviso,
+         BORRA las 3 postales de ejemplo y los botones .postcard-nav, y en su
+         lugar deja 3 tarjetas vacías así (sin texto adentro):
+           <div class="postcard-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+         El rating-badge SIEMPRE lleva la calificación y el número de reseñas
+         REALES de Google (no inventados). -->
+    <div class="reviews-notice" id="reviewsNotice" hidden>
+      Aquí podríamos poner algunas de sus reseñas.<br>
+      Mientras tanto, esta es nuestra <strong>calificación real en Google</strong>.
+    </div>
+    <div class="postcards-wrap reveal reveal-delay-1">
+      <div class="postcards-track" id="postcardsTrack">
+        <button type="button" class="postcard" style="--rot:-2deg"
+          data-name="Navy" data-role="Reseña en Google"
+          data-quote="Lugar con excelente distribución de juegos y mesas; el show super padre con las botargas muy limpias, super iguales a las originales y el personal muy atento. Si lo recomiendo">
+          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
+          <div class="postcard-avatar">NA</div>
+          <p class="postcard-quote">"Lugar con excelente distribución de juegos y mesas; el show super padre con las botargas muy limpias, super iguales a las originales..."</p>
+          <div class="postcard-foot">
+            <div class="postcard-name">Navy</div>
+            <div class="postcard-role">Reseña en Google</div>
+          </div>
+          <div class="postcard-more">Leer completa →</div>
+        </button>
+
+        <button type="button" class="postcard" style="--rot:1.5deg"
+          data-name="Nora Luna" data-role="Local Guide · Google"
+          data-quote="Muy padre salón con muchos juegos para entretener a los niños, me encantó">
+          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
+          <div class="postcard-avatar">NL</div>
+          <p class="postcard-quote">"Muy padre salón con muchos juegos para entretener a los niños, me encantó"</p>
+          <div class="postcard-foot">
+            <div class="postcard-name">Nora Luna</div>
+            <div class="postcard-role">Local Guide · Google</div>
+          </div>
+          <div class="postcard-more">Leer completa →</div>
+        </button>
+
+        <button type="button" class="postcard" style="--rot:-1deg"
+          data-name="Laura Garza" data-role="Reseña en Google"
+          data-quote="Mi evento fue en octubre, todo 10/10 la atención por parte del staff, la limpieza del salón, los baños, en general las instalaciones en muy buenas condiciones, en cuanto a la comida elegí tacos a vapor y estaban ricos, el show súper dinámico, sin duda lo recomiendo ampliamente.">
+          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
+          <div class="postcard-avatar">LG</div>
+          <p class="postcard-quote">"Todo 10/10 la atención por parte del staff, la limpieza del salón, los baños, en general las instalaciones en muy buenas condiciones..."</p>
+          <div class="postcard-foot">
+            <div class="postcard-name">Laura Garza</div>
+            <div class="postcard-role">Reseña en Google</div>
+          </div>
+          <div class="postcard-more">Leer completa →</div>
+        </button>
+
+        <button type="button" class="postcard" style="--rot:2deg"
+          data-name="Maribel Flores" data-role="Local Guide · Google"
+          data-quote="Excelente experiencia, excelente atención, servicio durante la planeación, muy servicial las personas durante el evento. Todo el staff siempre al pendiente">
+          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
+          <div class="postcard-avatar">MF</div>
+          <p class="postcard-quote">"Excelente experiencia, excelente atención, servicio durante la planeación, muy servicial las personas durante el evento..."</p>
+          <div class="postcard-foot">
+            <div class="postcard-name">Maribel Flores</div>
+            <div class="postcard-role">Local Guide · Google</div>
+          </div>
+          <div class="postcard-more">Leer completa →</div>
+        </button>
+
+        <button type="button" class="postcard" style="--rot:-1.5deg"
+          data-name="Rogelio Ibarra" data-role="Reseña en Google"
+          data-quote="Me parece un salón muy bonito y seguro, con vista de 360 grados veo en donde están mis niños durante todo el evento, excelente atención y un show divertidísimo, en verdad está de lujo">
+          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
+          <div class="postcard-avatar">RI</div>
+          <p class="postcard-quote">"Me parece un salón muy bonito y seguro, con vista de 360 grados veo en donde están mis niños durante todo el evento..."</p>
+          <div class="postcard-foot">
+            <div class="postcard-name">Rogelio Ibarra</div>
+            <div class="postcard-role">Reseña en Google</div>
+          </div>
+          <div class="postcard-more">Leer completa →</div>
+        </button>
+
+        <button type="button" class="postcard" style="--rot:1deg"
+          data-name="Joselin Vega" data-role="Local Guide · Google"
+          data-quote="Me encantó todo, el lugar, el servicio y la calidad. 100% recomendado">
+          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
+          <div class="postcard-avatar">JV</div>
+          <p class="postcard-quote">"Me encantó todo, el lugar, el servicio y la calidad. 100% recomendado"</p>
+          <div class="postcard-foot">
+            <div class="postcard-name">Joselin Vega</div>
+            <div class="postcard-role">Local Guide · Google</div>
+          </div>
+          <div class="postcard-more">Leer completa →</div>
+        </button>
+      </div>
+      <button class="postcard-nav postcard-prev" id="postcardPrev" aria-label="Reseña anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="postcard-nav postcard-next" id="postcardNext" aria-label="Siguiente reseña">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
 </section>
 
 <!-- Modal de reseña completa -->
