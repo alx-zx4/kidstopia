@@ -757,6 +757,15 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
    diseño del resto del sitio: otra tipografía (manuscrita, Caveat),
    fondo de papel, inclinada, ancho de tarjeta — nunca banda completa. */
 .jesus-note-wrap{display:flex;justify-content:center;padding:0 24px;margin:56px 0 8px;position:relative;z-index:6}
+.korvel-site-link{
+  display:table;position:relative;z-index:6;margin:22px auto 28px;
+  padding:9px 22px;border-radius:999px;background:#fffdf6;color:#17364d;
+  border:2px solid #17364d;box-shadow:0 5px 0 rgba(23,54,77,.22);
+  font-family:'Quicksand',sans-serif;font-size:clamp(20px,2vw,26px);
+  font-weight:800;letter-spacing:.01em;text-decoration:none;line-height:1.2;
+}
+.korvel-site-link:hover{background:#17364d;color:#fffdf6}
+.korvel-site-link:focus-visible{outline:3px solid #ff7f1a;outline-offset:4px}
 .jesus-note{
   max-width:460px;width:100%;
   background:#FFFDF6;
@@ -2650,6 +2659,7 @@ Estamos en Privada La Castaña, sobre el Blvd. Julián Treviño Elizondo en Apod
         <img class="jesus-note-firma" src="https://korvel.com.mx/img/firma-jesus.webp" alt="Firma de Jesús" width="150" height="56" loading="lazy">
       </div>
     </div>
+  <a class="korvel-site-link" href="https://korvel.com.mx/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Korvel: korvel.com.mx">korvel.com.mx</a>
   <svg class="wave-divider wave-to-dark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
 </section>
 
